@@ -1,29 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import movie_list from "../movies_list";
-import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Search = (props) => {
     const [formval, setformval] = useState("");
     const [Movies, setMovies] = useState(movie_list);
     const [filteredmovies, setfilteredmovies] = useState([]);
-    const [Recommendations, setRecommendations] = useState({});
-    async function getdata(obj) {
-        try {
-
-            var res = await axios.post("/api/recommend/", obj)
-            setRecommendations(res.data);
-        } catch (e) {
-            console.log(e);
-        }
-    }
-    function searchRecommendations(e) {
-        var sendobj = {
-            "title": e
-        }
-
-        getdata(sendobj);
-
-    }
 
     useEffect(() => {
         setfilteredmovies(
@@ -55,10 +37,20 @@ const Search = (props) => {
                             }) : null}
                         </div>
                     </div>
-                    <input className="submit-button" type="submit" value={'\u2192'} onClick={() => {
+                    <Link
+                        onClick={() => {
+                            setformval("");
+                        }} 
+                        to={{
+                            pathname: "/recommend",
+                            state: { MovieName: formval }
+                        }}
+                        className = "submit-button"
+                    >{'\u2192'}</Link>
+                    {/* <input className="submit-button" type="submit" value={'\u2192'} onClick={() => {
                         searchRecommendations(formval)
                         setformval("")
-                    }} />
+                    }} /> */}
                 </div>
 
             </div>
