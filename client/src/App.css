@@ -3,7 +3,7 @@
   background-image: url("bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 94vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,6 +51,7 @@
   color: white;
   border: none;
   cursor: pointer;  
+  outline: none;
   border-radius: 3px;
 }
 
@@ -81,4 +82,51 @@
   border-radius: 2px;
   outline: none;
   cursor: pointer;
+}
+
+.search-section{
+  width: 100%;
+}
+
+.holder{
+  display: flex;
+  flex-direction: column; 
+}
+
+.Footer{
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 0px;
+}
+
+.fa{
+  color: white;
+}
+
+.footer-inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.Footer .github{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  margin: 0px 10px;
+
+}
+.github a{
+  margin-left: 10px;
+  color: white;
+}
+
+.Footer p{
+  color: white;
+  line-height: 12px;
+ display: block;
+ /* height: 12px; */
 }
