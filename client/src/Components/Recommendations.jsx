@@ -51,7 +51,7 @@ const Recommendations = () => {
       printrecommendations()
   }, [Recommendations])
   return (
-    <div>
+    <div className = "Recommendations">
       <Search
       handleSubmit = {(e) => {searchRecommendations(e)}}
       />

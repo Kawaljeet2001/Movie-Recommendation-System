@@ -3,3 +3,6 @@
 /.ipynb_checkpoints/
 /__pycache__/
 /env/
+/client/node_modules/
+/client/.gitignore
+/client/README.md
