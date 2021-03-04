@@ -1,5 +1,5 @@
-.prepeared_df.pkl
-.vscode/
-.ipynb_checkpoints/
-.__pycache__/
-.env/
+/prepeared_df.pkl
+/.vscode/
+/.ipynb_checkpoints/
+/__pycache__/
+/env/
