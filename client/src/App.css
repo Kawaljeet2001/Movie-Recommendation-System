@@ -133,3 +133,30 @@
  display: block;
  /* height: 12px; */
 }
+
+
+
+/*Styling for Recommendation Tiles*/
+
+.Recommendation_Tiles{
+  /* background: red; */
+  bordeR: 2px solid #ddd;
+  border-radius: 5px;
+  height: 300px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  align-items: center;
+  margin: 0px 5px;
+}
+
+.Recommendation_Tiles p{
+  color: black;
+  font-weight: bold;
+}
+
+.Recommendation_Tiles img{
+  display: block;
+  max-height: 260px;
+}

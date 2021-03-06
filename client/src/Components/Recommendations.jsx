@@ -1,56 +1,57 @@
-import React , {useState , useEffect} from 'react'
-import {useLocation} from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-
+import RecommendationTiles from "./RecommendationTiles";
 
 const Recommendations = () => {
   const location = useLocation();
-  const [Recommendations, setRecommendations] = useState({});
+  const [Recommendations, setRecommendations] = useState();
 
-  async function getdata(obj) {
-      try {
-
-          var res = await axios.post("/api/recommend/", obj)
-          setRecommendations(res.data);
-      } catch (e) {
-          console.log(e);
-      }
-  }
-  function searchRecommendations(e) {
-      var sendobj = {
-          "title": e
-      }
-
-      getdata(sendobj);
-
-  }
-
-  function printrecommendations()
-  {
-    var keys = Object.keys(Recommendations);
-    var values = Object.values(Recommendations);
-
-    var returnans = []
-    for(var i=0;i<10;i++)
+  const imagepathprefix = "https://image.tmdb.org/t/p/original";
+  useEffect(() => {
+    
+    async function getAllData()
     {
-      returnans.push(
-        <p key = {i}>{keys[i]} {values[i]}</p>
-      )
+      try{
+        const MovieDetails = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=d7dd816b5caceb61abc1a42d5913bb2a&language=en-US&query=` + encodeURI(location.state.MovieName) + `&page=1&include_adult=false`);
+        const MovieRecommendations = await axios.post("/api/recommend/", {"title" : String(location.state.MovieName)});
+
+        //fetching the details of all the recommendations
+        var MovieRecommendationDetails = [];
+
+        //getting the keys of the Recommendations
+        var keys = Object.keys(MovieRecommendations.data);
+        for (var i=0;i<10;i++)
+        {
+          var temp = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=d7dd816b5caceb61abc1a42d5913bb2a&language=en-US&query=` + encodeURI(keys[i]) + `&page=1&include_adult=false`);
+          MovieRecommendationDetails.push(temp);
+        }
+        var FinalDetailsObj = {
+          "MovieDetails" : MovieDetails,
+          "MovieRecommendations" : MovieRecommendations.data,
+          "MovieRecommendationDetails" : MovieRecommendationDetails
+        };
+
+        setRecommendations(FinalDetailsObj);
+        // console.log(Recommendations);
+      }
+      catch(e)
+      {
+        console.log(e)
+      }
     }
 
-    return returnans;
-  }
+    getAllData();
+  }, [])
 
-  useEffect(() => {
-    searchRecommendations(location.state.MovieName)
-  } , [location])
-  console.log(location.state);
   return (
     <div>
+      {Recommendations ? console.log(Recommendations) :null}
       <h2>People also Watched: </h2>
-      {Recommendations ? 
-        printrecommendations()
-      : null}
+      <RecommendationTiles
+      PosterPath = {imagepathprefix + "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg"}
+      MovieName = "Avatar"
+      />
     </div>
   )
 }
