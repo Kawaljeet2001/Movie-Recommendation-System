@@ -84,6 +84,7 @@ const Recommendations = () => {
       />:
       <Spinner/>
     }
+    <h2 className = "cast-heading">Cast</h2>
       <div className = "cast-holder">
         {Recommendations ?
           Recommendations.MovieCast.data.cast.map((item, index) => {
@@ -99,7 +100,7 @@ const Recommendations = () => {
           })
           : null}
       </div>
-      <h2>People also Watched: </h2>
+      <h2 className = "Recommendation-title">Movie Recommendations</h2>
       <div className = "Recommendations-holder">
         {Recommendations ? 
           printRecommendationTiles()

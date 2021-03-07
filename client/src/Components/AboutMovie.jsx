@@ -60,7 +60,6 @@ const AboutMovie = (props) => {
             <div className = "Ratings">
                     <div>
                     <p>Budget: ${printmoney(props.MovieMetadata.data.budget)}</p>
-                        {/* {printmoney(props.MovieMetadata.data.budget)} */}
                     </div>
                     <div>
                         <p>Worldwide Collection: ${printmoney(props.MovieMetadata.data.revenue)}</p>
