@@ -1,15 +1,21 @@
 
 .main-div{
-  background-image: url("bg.png");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 94vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
+#bgvideo{
+  position: fixed;
+  z-index: -1;
+  /* height: 100%; */
+  width: 100%;
+}
 .main-div .main-heading{
   color: white;
   font-size: 64px;
@@ -149,10 +155,8 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  /* padding: 13px 0px; */
   align-items: center;
   margin-left: 14px;
-  margin-top: 10px;
   cursor: pointer;
 
 }
@@ -257,6 +261,8 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
 }
 
 .Navbar{
+  position:sticky;
+  top: 0;
   background: black;
   height: 7vh;
   z-index: 20;
@@ -264,7 +270,7 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
   justify-content: space-between;
   align-items: center;
   color: white;
-  position:sticky;
+
 }
 
 .Navbar h2{
@@ -283,17 +289,20 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
 /*Styling for Cast tile*/
 
 .Cast-Tile{
-  /* background: blue; */
-  height: 250px;
-  width: 150px;
+  height: 310px;
+  width: 160px;
+  border-radius: 10px;
+  margin: 10px 14px;
+  background: white;
 }
 
-.Cast-Tile div{
-  height: 220px;
-  width: 100%;
+.Cast-Tile .cast-image{
+  width: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .Cast-Tile div img{
@@ -301,7 +310,43 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
   max-width: 100%;
 }
 
+.Cast-Tile .cast-name{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Cast-Tile .cast-name h5{
+  font-size: 16px;
+  margin-top: 5px;
+}
+.Cast-Tile .cast-name h6{
+  color: #707070;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+  width: 160px;
+  /* background: rebeccapurple; */
+  margin-top: -25px;
+}
 .cast-holder{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cast-heading{
+  margin-left: 13px;
+  color: #bbb;
+  font-family: 'Secular One', sans-serif;
+}
+.Recommendation-title{
+  margin-left: 13px;
+  color: #bbb;
+  margin-top: 60px;
+  font-family: 'Secular One', sans-serif;
+}
+
+.fa-arrow-circle-right{
+  margin-left: 5px;
+  cursor: pointer;
 }
