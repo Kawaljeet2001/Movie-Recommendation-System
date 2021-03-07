@@ -5,6 +5,7 @@ import RecommendationTiles from "./RecommendationTiles";
 import Spinner from "./Spinner";
 import AboutMovie from "./AboutMovie";
 import Cast from "./Cast";
+import Accordian from './Accordian';
 
 const Recommendations = () => {
   const location = useLocation();
@@ -84,8 +85,18 @@ const Recommendations = () => {
       />:
       <Spinner/>
     }
-    <h2 className = "cast-heading">Cast</h2>
-      <div className = "cast-holder">
+
+    {
+      Recommendations ?
+      (<Accordian
+        CastData = {Recommendations.MovieCast.data.cast}
+        imagepathprefix = {imagepathprefix}
+      />)
+       : null
+    }
+    
+
+      {/* <div className = "cast-holder">
         {Recommendations ?
           Recommendations.MovieCast.data.cast.map((item, index) => {
             if (index < 15) {
@@ -99,7 +110,7 @@ const Recommendations = () => {
 
           })
           : null}
-      </div>
+      </div> */}
       <h2 className = "Recommendation-title">Movie Recommendations</h2>
       <div className = "Recommendations-holder">
         {Recommendations ? 

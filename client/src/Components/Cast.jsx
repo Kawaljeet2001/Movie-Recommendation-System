@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Cast = (props) => {
-    console.log(props)
     return (
         <div className = "Cast-Tile">
             <div className = "cast-image">

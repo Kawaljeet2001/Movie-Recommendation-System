@@ -1,9 +1,9 @@
 
 .main-div{
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 94vh;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,4 +349,48 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
 .fa-arrow-circle-right{
   margin-left: 5px;
   cursor: pointer;
+}
+
+.Accordian-content{
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.accordian-holder-inner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordian-holder-inner button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.accordian-holder-inner button .fa-angle-double-down , .accordian-holder-inner button .fa-angle-double-down{
+  color: white !important;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:1200px){
+  #bgvideo{
+    display: none;
+    position: fixed;
+    z-index: -1;
+    /* height: 100%; */
+    width: 100%;
+  }
+
+  .main-div{
+    background: url("bg.png");
+  }
+
 }
