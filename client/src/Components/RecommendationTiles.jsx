@@ -3,7 +3,9 @@ import React from 'react'
 const RecommendationTiles = (props) => {
     return (
         <div className = "Recommendation_Tiles">
-            <img src = {props.PosterPath}/>
+            <div className = "image-holder">
+                <img alt = {props.MovieName} src = {props.PosterPath}/>
+            </div>
             <p>{props.MovieName}</p>
         </div>
     )

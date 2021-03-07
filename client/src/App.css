@@ -134,29 +134,174 @@
  /* height: 12px; */
 }
 
+.Recommendations-Page{
+  display: flex;
+  flex-direction: column;
+  background: #181818;
 
+}
 
 /*Styling for Recommendation Tiles*/
 
 .Recommendation_Tiles{
-  /* background: red; */
-  bordeR: 2px solid #ddd;
   border-radius: 5px;
-  height: 300px;
-  width: 25%;
+  height: 340px;
+  width: 200px;
   display: flex;
   flex-direction: column;
-  padding: 10px 0px;
+  /* padding: 13px 0px; */
   align-items: center;
-  margin: 0px 5px;
+  margin-left: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+
 }
 
+.Recommendation_Tiles .image-holder{
+  height: 300px;
+  width: 200px;
+  display: flex;
+}
 .Recommendation_Tiles p{
-  color: black;
+  color: white;
+  font-size: 11px;
   font-weight: bold;
+  text-align: center;
 }
 
 .Recommendation_Tiles img{
   display: block;
-  max-height: 260px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.Recommendations-holder{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;   
+}
+
+.fa-circle-o-notch{
+  color: #d90429 !important;
+  animation: rotation 2s infinite linear;
+}
+
+
+@keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+
+
+
+
+/*Styling for About-Movie section*/
+
+.About-Movie img{
+  width: 100%;
+}
+
+.About-Movie .image-holder{
+  position: relative;
+}
+
+#image{
+position: absolute;
+height: 100%;
+width: 100%;
+background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent );
+}
+
+.About-Movie .Text-on-Banner .inner{
+  z-index: 5;
+  position: absolute;
+  color: white;
+  top: 20%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  align-items: flex-start;
+}
+
+.Text-on-Banner .inner div{
+  display: flex;
+  color: #bbb;
+  flex-direction: row;
+  margin-top: -50px;
+}
+.About-Movie .Text-on-Banner h2{
+  font-family: 'Secular One', sans-serif;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.agelimit {
+  display: block;
+  width: 50px;
+  border: 1px solid #bbb;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  justify-content: center;
+}
+
+.About-Movie .Ratings{
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.Navbar{
+  background: black;
+  height: 7vh;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position:sticky;
+}
+
+.Navbar h2{
+  color: red;
+  font-family: 'Kanit', sans-serif;
+  font-size: 35px !important;
+  margin-left: 20px;
+}
+
+.Navbar p{
+  margin-right: 20px;
+  font-family: 'Kanit', sans-serif;
+  letter-spacing: 1px;
+}
+
+/*Styling for Cast tile*/
+
+.Cast-Tile{
+  /* background: blue; */
+  height: 250px;
+  width: 150px;
+}
+
+.Cast-Tile div{
+  height: 220px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Cast-Tile div img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.cast-holder{
+  display: flex;
+  justify-content: space-evenly;
 }
