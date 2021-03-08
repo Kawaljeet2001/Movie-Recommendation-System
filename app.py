@@ -4,13 +4,12 @@ from model import get_recommendations
 from serialize import serialize
 from flask_cors import CORS, cross_origin
 
-app = Flask(__name__)
+app = Flask(__name__ , static_folder = "./client/build" , static_url_path= "/")
 cors = CORS(app)
 
 @app.route('/')
-def homepage():
-    return ("done")
-
+def index():
+    return app.send_static_file('index.html')
 
 ##setting up the api endpoints
 obj = {
