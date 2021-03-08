@@ -385,6 +385,19 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
   color: white !important;
 }
 
+.logo-link{
+  text-decoration: none;
+}
+
+.spinner-div{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media(max-width:1200px){
   #bgvideo{
