@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import Cast from "./Cast";
 
 const Accordian = (props) => {
     const [iscollapsed, setiscollapsed] = useState(false);
     const content = useRef(null);
-
-
     function toggleheight() {
         setiscollapsed(!iscollapsed);
     }
@@ -33,6 +30,7 @@ const Accordian = (props) => {
                     props.CastData.map((item, index) => {
                         if (index < 15) {
                             return <Cast
+                            key = {index}
                                 imageprefix={props.imagepathprefix}
                                 MovieCast={item}
                             />
@@ -40,7 +38,6 @@ const Accordian = (props) => {
                         return null;
                     })
                 }
-
             </div>
         </div>
     )

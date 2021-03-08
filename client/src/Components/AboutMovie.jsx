@@ -1,7 +1,6 @@
 import React from 'react'
 
 const AboutMovie = (props) => {
-    // console.log(props.MovieCast);
     function printruntime(min)
     {
         var hours = Math.floor(min/60);
@@ -38,7 +37,6 @@ const AboutMovie = (props) => {
     return (
         <div className = "About-Movie">
             <div className = "image-holder">
-                
                 <div className = "Text-on-Banner">
                     <div className = "inner">
                         <h2>{props.MovieName}</h2>
@@ -56,6 +54,21 @@ const AboutMovie = (props) => {
                 </div>
                 <div id = "image"></div>
                 <img alt = {props.MovieName} src = {props.imagepathprefix + props.Details.data.results[0].backdrop_path}/>
+            </div>
+            <div className="Text-on-Banner-responsive">
+                <div className="inner">
+                    <h2>{props.MovieName}</h2>
+                    <div>
+                        <p>{props.Details.data.results[0].release_date.slice(0, 4)}{'\u00A0'}</p>
+                        <p>|{'\u00A0'}</p>
+                        <p className="agelimit">{props.Details.data.results[0].adult !== 'false' ? 'PG-13' : '18+'}</p>
+                        <p>{'\u00A0'}|{'\u00A0'}</p>
+                        {printruntime(props.MovieMetadata.data.runtime)}
+                        <p> |{'\u00A0'} </p>
+                        <p>{props.MovieMetadata.data.genres[0].name}</p>
+                    </div>
+                    <p className="Overview">{props.Details.data.results[0].overview}</p>
+                </div>
             </div>
             <div className = "Ratings">
                     <div>

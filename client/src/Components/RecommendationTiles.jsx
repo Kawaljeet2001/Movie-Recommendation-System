@@ -8,10 +8,12 @@ const RecommendationTiles = (props) => {
                 <img alt = {props.MovieName} src = {props.PosterPath}/>
            </div>
             <Link
+                onClick = {() => {props.setToggle('false')}}
                 to={{
-                    pathname: "/recommend2",
+                    pathname: "/recommend",
                     state: { MovieName: props.MovieName }
                 }}
+                
             >
                 <p>{props.MovieName}</p>
             </Link>

@@ -9,6 +9,9 @@
   justify-content: center;
   flex-direction: column;
 }
+.Text-on-Banner-responsive{
+  display: none;
+}
 
 #bgvideo{
   position: fixed;
@@ -147,6 +150,12 @@
 
 }
 
+.Recommendations-holder{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;   
+}
+
 /*Styling for Recommendation Tiles*/
 
 .Recommendation_Tiles{
@@ -179,11 +188,6 @@
   max-width: 100%;
 }
 
-.Recommendations-holder{
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;   
-}
 
 .fa-circle-o-notch{
   color: #d90429 !important;
@@ -212,7 +216,11 @@
 .About-Movie .image-holder{
   position: relative;
 }
-
+.About-Movie{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 #image{
 position: absolute;
 height: 100%;
@@ -255,9 +263,14 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
 }
 
 .About-Movie .Ratings{
+  margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  /* background: red; */
   color: white;
+  width: 80%;
+  border: 2px solid #bbb;
 }
 
 .Navbar{
@@ -373,13 +386,6 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
 }
 
 
-
-
-
-
-
-
-
 @media(max-width:1200px){
   #bgvideo{
     display: none;
@@ -393,4 +399,42 @@ background: linear-gradient(to right , rgba(0 , 0 , 0 , 0.8 ) 10% , transparent 
     background: url("bg.png");
   }
 
+}
+
+
+@media(max-width: 900px){
+   .Text-on-Banner-responsive{
+     display: block;
+     margin-top: -30px;
+     margin-left: 20px;
+   }
+
+   .Text-on-Banner{
+     display: none;
+   }
+   .Text-on-Banner-responsive .inner div{
+    display: flex;
+    color: #bbb;
+    flex-direction: row;
+    margin-top: -50px;
+  }
+  .About-Movie .Text-on-Banner-responsive h2{
+    font-family: 'Secular One', sans-serif;
+    color: white;
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .Overview{
+    color: white;
+    display: block;
+    width: 95%;
+    margin-top: -5px;
+    
+  }
+
+  .About-Movie .Ratings{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+  }
 }

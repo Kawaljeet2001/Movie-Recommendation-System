@@ -4,7 +4,7 @@ const Cast = (props) => {
     return (
         <div className = "Cast-Tile">
             <div className = "cast-image">
-                <img src = {props.imageprefix + props.MovieCast.profile_path} alt = "image" />
+                <img src = {props.imageprefix + props.MovieCast.profile_path} alt = "imagebnieg" />
             </div>
             <div className = "cast-name">
                 <h5>{props.MovieCast.name}</h5>
