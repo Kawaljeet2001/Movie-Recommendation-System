@@ -6,7 +6,6 @@ import App from './App';
 import Recommendations from "./Components/Recommendations";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import Recommend2 from "./Components/Recommend2";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +13,6 @@ ReactDOM.render(
     <Navbar/>
     <Switch>
       <Route exact path = "/" component = {App}/>
-      <Route path = "/recommend" component = {Recommendations}/>
       <Route path = "/recommend" component = {Recommendations}/>
     </Switch>
     <Footer />
