@@ -1,8 +1,8 @@
 # Movie-Recommendation-System
 This is the Movie Recommendation System, to get personlized movie recommendations for a movie search.
 
-# Realtime Twitter Sentiment Analysis Dashboard
-Twitter Analytics Dashboard
+<!-- # Realtime Twitter Sentiment Analysis Dashboard
+Twitter Analytics Dashboard -->
 
 ### Description 
 
