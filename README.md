@@ -39,7 +39,17 @@ The project **Movie Recommendation System**, uses a **Content-Based** Machine le
     * The accuracy of the model stands at: ```0.752 or 75.2%``` -->
 ### Prototype
 
+**Homepage**
 ![Homepage](4.png)
+
+**About-Movie**
+![Homepage](1.png)
+
+**Cast-Details**
+![Homepage](2.png)
+
+**Recommendations**
+![Homepage](3.png)
 <!-- **Using a Twitter-Username for Analysing data** -->
 <!-- 
 ![dash](https://user-images.githubusercontent.com/56076028/106376026-4869f280-63b7-11eb-87fb-e1e3a6a4b817.jpeg)
