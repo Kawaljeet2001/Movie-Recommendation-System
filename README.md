@@ -40,7 +40,7 @@ The project **Movie Recommendation System**, uses a **Content-Based** Machine le
 ### Prototype
 
 **Homepage**
-![Homepage](4.png)
+![Homepage](sample/4.png)
 
 **About-Movie**
 ![Homepage](1.png)
