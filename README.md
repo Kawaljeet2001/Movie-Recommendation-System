@@ -3,6 +3,9 @@ This is the Movie Recommendation System, to get personlized movie recommendation
 
 <!-- # Realtime Twitter Sentiment Analysis Dashboard
 Twitter Analytics Dashboard -->
+![Homepage](sample/giff.gif)
+
+
 
 ### Description 
 
