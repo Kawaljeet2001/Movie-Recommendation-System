@@ -15,7 +15,7 @@ const Recommendations = () => {
 
     async function getAllData() {
       try {
-        const MovieDetails = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=d7dd816b5caceb61abc1a42d5913bb2a&language=en-US&query=` + encodeURI(location.state.MovieName) + `&page=1&include_adult=false`);
+        const MovieDetails = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=` + encodeURI(location.state.MovieName) + `&page=1&include_adult=false`);
         const MovieRecommendations = await axios.post("/api/recommend/", { "title": String(location.state.MovieName) });
 
         //fetching the details of all the recommendations
@@ -23,13 +23,13 @@ const Recommendations = () => {
         var Movie_metadata;
         var Movie_Cast;
         if (MovieDetails) {
-          Movie_metadata = await axios.get('https://api.themoviedb.org/3/movie/' + String(MovieDetails.data.results[0].id) + '?api_key=d7dd816b5caceb61abc1a42d5913bb2a&language=en-US')
-          Movie_Cast = await axios.get('https://api.themoviedb.org/3/movie/' + String(MovieDetails.data.results[0].id) + '/credits?api_key=d7dd816b5caceb61abc1a42d5913bb2a&language=en-US')
+          Movie_metadata = await axios.get('https://api.themoviedb.org/3/movie/' + String(MovieDetails.data.results[0].id) + `?api_key=${process.env.API_KEY}&language=en-US`)
+          Movie_Cast = await axios.get('https://api.themoviedb.org/3/movie/' + String(MovieDetails.data.results[0].id) + `/credits?api_key=${process.env.API_KEY}&language=en-US`)
         }
         //getting the keys of the Recommendations
         var keys = Object.keys(MovieRecommendations.data);
         for (var i = 0; i < 10; i++) {
-          var temp = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=d7dd816b5caceb61abc1a42d5913bb2a&language=en-US&query=` + encodeURI(keys[i]) + `&page=1&include_adult=false`);
+          var temp = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=` + encodeURI(keys[i]) + `&page=1&include_adult=false`);
           MovieRecommendationDetails.push(temp);
         }
         var FinalDetailsObj = {
